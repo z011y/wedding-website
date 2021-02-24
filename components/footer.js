@@ -5,16 +5,16 @@ export default function Footer() {
   return (
     <FooterWrapper>
       <LinksWrapper>
-        <Link href="/">
+        <Link href="/ourStory">
           <a>our story</a>
         </Link>
-        <Link href="/">
+        <Link href="/gallery">
           <a>gallery</a>
         </Link>
-        <Link href="/">
+        <Link href="/registry">
           <a>registry</a>
         </Link>
-        <Link href="/">
+        <Link href="/rsvp">
           <a>rsvp</a>
         </Link>
       </LinksWrapper>
@@ -69,6 +69,7 @@ const LinksWrapper = styled.div`
     align-items: center;
     height: 200px;
     margin-bottom: 48px;
+    width: 100%;
   }
 `;
 
