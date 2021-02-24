@@ -1,59 +1,33 @@
 import Head from "next/head";
 import styled from "styled-components";
-import { useEffect } from "react";
 
-import ThemeToggle from "./themeToggle";
+import Header from "./header";
+import Footer from "./footer";
 
-export default function Layout({
-  children,
-  toggleTheme,
-  darkTheme,
-  rehydrateTheme,
-}) {
-  useEffect(() => {
-    const cachedTheme = localStorage.getItem("darkTheme");
-    console.log(cachedTheme);
-    console.log(darkTheme);
-    if (cachedTheme !== darkTheme.toString()) {
-      rehydrateTheme();
-    }
-  }, []);
-
+export default function Layout({ children }) {
   return (
-    <div>
+    <LayoutWrapper>
       <Head>
-        <title>Next App</title>
+        <title>CAMERON AND NICOLE</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap"
+          rel="stylesheet"
+        />
       </Head>
-
-      <Header>
-        header
-        <ThemeToggle toggleTheme={toggleTheme} darkTheme={darkTheme} />
-      </Header>
-
+      <Header />
       <Main>{children}</Main>
-
-      <Footer>footer</Footer>
-    </div>
+      <Footer />
+    </LayoutWrapper>
   );
 }
 
-const Header = styled.header`
-  position: fixed;
-  top: 0;
-  right: 0;
+const LayoutWrapper = styled.div`
   width: 100%;
-  height: 50px;
-  z-index: 100;
+  margin-top: -16px;
 `;
 
 const Main = styled.main`
-  height: 100vh;
-  width: 100%;
-  margin-top: 50px;
-`;
-
-const Footer = styled.footer`
-  height: 100px;
   width: 100%;
 `;
