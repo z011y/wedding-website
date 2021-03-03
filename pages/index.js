@@ -54,7 +54,7 @@ export default function Home() {
 
 const StyledHero = styled.div`
   height: calc(100vh - 32px);
-  background-image: url("/images/IMG_4299 3.JPG");
+  background-image: url("/images/676A7611.jpg");
   background-size: cover;
   background-position: 50% 60%;
   background-repeat: no-repeat;

@@ -34,7 +34,7 @@ export default function Masonry(props) {
   const { data, error } = useSWR(
     `
       {
-        assets(first: 10) {
+        assets {
           id
           url(transformation: { image: { resize: { width: 1400 } } })
         }
