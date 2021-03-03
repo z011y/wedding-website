@@ -9,13 +9,13 @@ export default (req, res) => {
   let transport = nodemailer.createTransport({
     service: "Gmail",
     auth: {
-      user: process.env.GMAIL_SENDER_ADDRESS,
+      user: "cameron.ntc@gmail.com",
       pass: process.env.GMAIL_APP_PASSWORD,
     },
   });
 
   const content = {
-    from: process.env.GMAIL_SENDER_ADDRESS, // Sender address
+    from: "cameron.ntc@gmail.com", // Sender address
     to: "cameron@zolly.dev", // List of recipients
     subject: `RSVP for ${name}`, // Subject line
     text: `RSVP for ${name}. Party of ${number}`, // Plain text body
