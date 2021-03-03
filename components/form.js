@@ -39,6 +39,8 @@ export default function Form() {
       });
     } else {
       setStatus({
+        submitting: false,
+        submitted: false,
         info: {
           error: true,
           msg: msg,
@@ -49,6 +51,14 @@ export default function Form() {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
+    setStatus({
+      submitting: true,
+      submitted: false,
+      info: {
+        error: false,
+        msg: null,
+      },
+    });
     const res = await fetch("/api/send", {
       method: "POST",
       headers: {
@@ -69,7 +79,16 @@ export default function Form() {
         required
         placeholder="Your Full Name"
         onChange={handleOnChange}
-        onFocus={() => setStatus({ submitted: false })}
+        onFocus={() =>
+          setStatus({
+            submitting: false,
+            submitted: false,
+            info: {
+              error: false,
+              msg: null,
+            },
+          })
+        }
         value={inputs.name}
       />
 
@@ -80,7 +99,16 @@ export default function Form() {
         required
         placeholder="Enter a number between 1 and 5"
         onChange={handleOnChange}
-        onFocus={() => setStatus({ submitted: false })}
+        onFocus={() =>
+          setStatus({
+            submitting: false,
+            submitted: false,
+            info: {
+              error: false,
+              msg: null,
+            },
+          })
+        }
         value={inputs.number}
         min="1"
         max="5"
@@ -112,6 +140,9 @@ export default function Form() {
             : "RSVP SENT"
           : "SENDING..."}
       </StyledButton>
+      {status.info.error ? (
+        <StyledError>Your message was not sent. Please try again.</StyledError>
+      ) : null}
     </StyledForm>
   );
 }
@@ -133,4 +164,9 @@ const StyledButton = styled.button`
   position: absolute;
   bottom: 0px;
   color: black;
+`;
+
+const StyledError = styled.p`
+  position: absolute;
+  bottom: 48px;
 `;
