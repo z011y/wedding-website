@@ -6,7 +6,7 @@ import Footer from "./footer";
 
 export default function Layout({ children }) {
   return (
-    <LayoutWrapper>
+    <StyledLayout>
       <Head>
         <title>CAMERON AND NICOLE</title>
         <link rel="icon" href="/favicon.ico" />
@@ -17,17 +17,17 @@ export default function Layout({ children }) {
         />
       </Head>
       <Header />
-      <Main>{children}</Main>
+      <StyledMain>{children}</StyledMain>
       <Footer />
-    </LayoutWrapper>
+    </StyledLayout>
   );
 }
 
-const LayoutWrapper = styled.div`
+const StyledLayout = styled.div`
   width: 100%;
   margin-top: -16px;
 `;
 
-const Main = styled.main`
+const StyledMain = styled.main`
   width: 100%;
 `;

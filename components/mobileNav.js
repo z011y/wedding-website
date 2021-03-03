@@ -9,8 +9,8 @@ export default function MobileNav() {
   };
 
   return (
-    <NavWrapper>
-      <LinksWrapper>
+    <StyledNav>
+      <StyledLinksWrapper>
         <Link href="/">
           <a style={router.pathname === "/" ? activeLinkStyle : null}>home</a>
         </Link>
@@ -34,12 +34,12 @@ export default function MobileNav() {
             rsvp
           </a>
         </Link>
-      </LinksWrapper>
-    </NavWrapper>
+      </StyledLinksWrapper>
+    </StyledNav>
   );
 }
 
-const NavWrapper = styled.header`
+const StyledNav = styled.header`
   position: absolute;
   top: 0;
   right: 0;
@@ -53,7 +53,7 @@ const NavWrapper = styled.header`
   background-color: #fff1e6;
 `;
 
-const LinksWrapper = styled.div`
+const StyledLinksWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;

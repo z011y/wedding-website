@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export default function Footer() {
   return (
-    <FooterWrapper>
-      <LinksWrapper>
+    <StyledFooter>
+      <StyledLinksWrapper>
         <Link href="/ourStory">
           <a>our story</a>
         </Link>
@@ -17,23 +17,23 @@ export default function Footer() {
         <Link href="/rsvp">
           <a>rsvp</a>
         </Link>
-      </LinksWrapper>
-      <Logo>
+      </StyledLinksWrapper>
+      <StyledLogo>
         <h3>
           cameron
           <br /> and
           <br /> nicole
         </h3>
-      </Logo>
-      <Address>
+      </StyledLogo>
+      <StyledAddress>
         the white shanty <br /> 502 S 300 W <br /> Provo, UT 84601
-      </Address>
-      <Line></Line>
-    </FooterWrapper>
+      </StyledAddress>
+      <StyledLine></StyledLine>
+    </StyledFooter>
   );
 }
 
-const FooterWrapper = styled.footer`
+const StyledFooter = styled.footer`
   width: 100%;
   height: 550px;
   display: flex;
@@ -48,7 +48,7 @@ const FooterWrapper = styled.footer`
   }
 `;
 
-const Logo = styled.div`
+const StyledLogo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +59,7 @@ const Logo = styled.div`
   border-radius: 8px;
 `;
 
-const LinksWrapper = styled.div`
+const StyledLinksWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 500px;
@@ -73,12 +73,12 @@ const LinksWrapper = styled.div`
   }
 `;
 
-const Address = styled.h3`
+const StyledAddress = styled.h3`
   text-align: center;
   font-size: 14px;
 `;
 
-const Line = styled.div`
+const StyledLine = styled.div`
   height: 18px;
   width: 100%;
   border-radius: 8px;

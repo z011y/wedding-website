@@ -4,18 +4,18 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <Hero></Hero>
-      <Info>
-        <TitleWrapper>
-          <Date>join us may 17th, 2021</Date>
-          <Grid>
+      <StyledHero></StyledHero>
+      <StyledInfo>
+        <StyledTitleWrapper>
+          <StyledDate>join us may 17th, 2021</StyledDate>
+          <StyledGrid>
             <h1>time</h1>
             <h1>location</h1>
             <h1>itinerary</h1>
-          </Grid>
-        </TitleWrapper>
-        <InfoWrapper>
-          <GridInfo>
+          </StyledGrid>
+        </StyledTitleWrapper>
+        <StyledInfoWrapper>
+          <StyledGridInfo>
             <h3>
               Monday <br />
               May 17th, 2021 <br />
@@ -27,10 +27,10 @@ export default function Home() {
             <h3>
               Wedding Ceremony <br /> Reception <br /> Wood-fired pizzas
             </h3>
-          </GridInfo>
-        </InfoWrapper>
-        <MobileWrapper>
-          <GridInfo>
+          </StyledGridInfo>
+        </StyledInfoWrapper>
+        <StyledMobileWrapper>
+          <StyledGridInfo>
             <h1>time</h1>
             <h3>
               Monday <br />
@@ -45,22 +45,22 @@ export default function Home() {
             <h3>
               Wedding Ceremony <br /> Reception <br /> Wood-fired pizzas
             </h3>
-          </GridInfo>
-        </MobileWrapper>
-      </Info>
+          </StyledGridInfo>
+        </StyledMobileWrapper>
+      </StyledInfo>
     </>
   );
 }
 
-const Hero = styled.div`
+const StyledHero = styled.div`
   height: calc(100vh - 32px);
-  background-image: url("/images/IMG_4295.JPG");
+  background-image: url("/images/IMG_4299 3.JPG");
   background-size: cover;
-  background-position: 50% 80%;
+  background-position: 50% 60%;
   background-repeat: no-repeat;
 `;
 
-const Info = styled.div`
+const StyledInfo = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   height: 100vh;
@@ -76,7 +76,7 @@ const Info = styled.div`
   }
 `;
 
-const TitleWrapper = styled.div`
+const StyledTitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   transform: translateY(-48px);
@@ -90,13 +90,13 @@ const TitleWrapper = styled.div`
   }
 `;
 
-const Date = styled.h3`
+const StyledDate = styled.h3`
   position: absolute;
   top: 32px;
   left: 48px;
 `;
 
-const Grid = styled.div`
+const StyledGrid = styled.div`
   height: 100%;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -112,14 +112,14 @@ const Grid = styled.div`
   }
 `;
 
-const GridInfo = styled(Grid)`
+const StyledGridInfo = styled(StyledGrid)`
   margin-top: 96px;
   justify-content: start;
   text-align: left;
   padding: 0 0 0 48px;
 `;
 
-const InfoWrapper = styled.div`
+const StyledInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #eddcd2;
@@ -129,7 +129,7 @@ const InfoWrapper = styled.div`
   }
 `;
 
-const MobileWrapper = styled.div`
+const StyledMobileWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #fff1e6;

@@ -15,16 +15,16 @@ export default function MobileMenu() {
   }, [toggled]);
 
   return (
-    <MenuWrapper>
-      <MenuIcon onClick={() => setToggled(!toggled)}>
+    <StyledMenu>
+      <StyledMenuIcon onClick={() => setToggled(!toggled)}>
         {toggled ? <X /> : <Menu />}
         {toggled ? <MobileNav /> : null}
-      </MenuIcon>
-    </MenuWrapper>
+      </StyledMenuIcon>
+    </StyledMenu>
   );
 }
 
-const MenuWrapper = styled.div`
+const StyledMenu = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +39,7 @@ const MenuWrapper = styled.div`
   }
 `;
 
-const MenuIcon = styled.div`
+const StyledMenuIcon = styled.div`
   width: 24px;
 
   &:hover {

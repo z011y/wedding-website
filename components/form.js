@@ -61,9 +61,9 @@ export default function Form() {
   };
 
   return (
-    <FormWrapper onSubmit={handleOnSubmit}>
+    <StyledForm onSubmit={handleOnSubmit}>
       <label htmlFor="name">Your Full Name</label>
-      <Input
+      <StyledInput
         id="name"
         type="text"
         required
@@ -74,7 +74,7 @@ export default function Form() {
       />
 
       <label htmlFor="number">Number of People in Your Party</label>
-      <Input
+      <StyledInput
         id="number"
         type="number"
         required
@@ -86,7 +86,7 @@ export default function Form() {
         max="5"
       />
 
-      <Button
+      <StyledButton
         type="submit"
         disabled={
           inputs.number <= 0 ||
@@ -111,12 +111,12 @@ export default function Form() {
             ? "RSVP"
             : "RSVP SENT"
           : "SENDING..."}
-      </Button>
-    </FormWrapper>
+      </StyledButton>
+    </StyledForm>
   );
 }
 
-const FormWrapper = styled.form`
+const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -125,11 +125,11 @@ const FormWrapper = styled.form`
   justify-content: center;
 `;
 
-const Input = styled.input`
+const StyledInput = styled.input`
   margin-top: 5px;
 `;
 
-const Button = styled.button`
+const StyledButton = styled.button`
   position: absolute;
   bottom: 0px;
   color: black;

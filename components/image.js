@@ -13,29 +13,27 @@ export default function Image({
   right,
 }) {
   return (
-    <GalleryImage>
-      <motion.img
+    <StyledGalleryImage>
+      <StyledImage
         whileHover={{
           y: -24,
           transition: { type: "spring", stiffness: 100 },
         }}
-        whileTap={{
-          scale: 5,
-        }}
-        style={{
-          borderRadius: "8px",
-          marginTop: "48px",
-          width: "300px",
-        }}
         src={src}
         onClick={() => setActiveImage(index)}
       />
-    </GalleryImage>
+    </StyledGalleryImage>
   );
 }
 
-const GalleryImage = styled.div`
+const StyledGalleryImage = styled.div`
   &:hover {
     cursor: pointer;
   }
+`;
+
+const StyledImage = styled(motion.img)`
+  border-radius: 8px;
+  margin-top: 48px;
+  width: 300px;
 `;

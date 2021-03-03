@@ -5,21 +5,21 @@ import Masonry from "../components/masonry";
 
 export default function Gallery() {
   return (
-    <Content>
-      <Hero>
+    <StyledContent>
+      <StyledHero>
         <h1>Gallery</h1>
-      </Hero>
+      </StyledHero>
       <Masonry />
-    </Content>
+    </StyledContent>
   );
 }
 
-const Content = styled.div`
+const StyledContent = styled.div`
   width: 100%;
 `;
 
-const Hero = styled.div`
-  background-image: url("images/IMG_4296.JPG");
+const StyledHero = styled.div`
+  background-image: url("images/676A7843.jpg");
   background-position: center;
   background-size: cover;
   display: flex;

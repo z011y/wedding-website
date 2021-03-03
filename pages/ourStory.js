@@ -4,18 +4,18 @@ import Story from "../docs/ourStory.mdx";
 export default function OurStory() {
   return (
     <>
-      <Hero src="/images/676A6915.jpg"></Hero>
-      <Title>our story</Title>
-      <Content>
-        <StoryWrapper>
+      <StyledHero src="/images/676A6915.jpg"></StyledHero>
+      <StyledTitle>our story</StyledTitle>
+      <StyledContent>
+        <StyledStoryWrapper>
           <Story />
-        </StoryWrapper>
-      </Content>
+        </StyledStoryWrapper>
+      </StyledContent>
     </>
   );
 }
 
-const Hero = styled.img`
+const StyledHero = styled.img`
   width: 50%;
   border-bottom-right-radius: 50px;
 
@@ -28,7 +28,7 @@ const Hero = styled.img`
   }
 `;
 
-const Title = styled.h1`
+const StyledTitle = styled.h1`
   position: absolute;
   font-size: 72px;
   top: 341px;
@@ -41,7 +41,7 @@ const Title = styled.h1`
   }
 `;
 
-const StoryWrapper = styled.div`
+const StyledStoryWrapper = styled.div`
   width: 50%;
   margin-top: 48px;
   margin-bottom: 48px;
@@ -53,7 +53,7 @@ const StoryWrapper = styled.div`
   }
 `;
 
-const Content = styled.div`
+const StyledContent = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;

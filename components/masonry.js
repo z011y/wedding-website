@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import Image from "./image";
 import { request } from "graphql-request";
 import useSWR from "swr";
 import { X, ArrowRight, ArrowLeft } from "react-feather";
+
+import Image from "./image";
 
 const fetcher = (query) =>
   request(
@@ -114,19 +115,23 @@ export default function Masonry(props) {
   return (
     <>
       {active >= 0 ? (
-        <FullImg style={{ backgroundImage: `url(${data.assets[active].url})` }}>
-          <Close onClick={close} />
-          {active < data.assets.length - 1 ? <Right onClick={right} /> : null}
-          {active > 0 ? <Left onClick={left} /> : null}
-        </FullImg>
+        <StyledFullImg
+          style={{ backgroundImage: `url(${data.assets[active].url})` }}
+        >
+          <StyledCloseIcon onClick={close} />
+          {active < data.assets.length - 1 ? (
+            <StyledRightIcon onClick={right} />
+          ) : null}
+          {active > 0 ? <StyledLeftIcon onClick={left} /> : null}
+        </StyledFullImg>
       ) : (
-        <Content className="gallery">{renderImages()}</Content>
+        <StyledContent className="gallery">{renderImages()}</StyledContent>
       )}
     </>
   );
 }
 
-const Content = styled.div`
+const StyledContent = styled.div`
   columns: 5 300px;
   column-gap: 48px;
   height: 100%;
@@ -147,7 +152,7 @@ const Content = styled.div`
   }
 `;
 
-const FullImg = styled.div`
+const StyledFullImg = styled.div`
   height: 100%;
   width: 100%;
   background-color: #fff;
@@ -166,7 +171,7 @@ const FullImg = styled.div`
   }
 `;
 
-const Close = styled(X)`
+const StyledCloseIcon = styled(X)`
   position: absolute;
   top: 48px;
   right: 48px;
@@ -183,7 +188,7 @@ const Close = styled(X)`
   }
 `;
 
-const Right = styled(ArrowRight)`
+const StyledRightIcon = styled(ArrowRight)`
   position: absolute;
   top: 50%;
   right: 48px;
@@ -200,7 +205,7 @@ const Right = styled(ArrowRight)`
   }
 `;
 
-const Left = styled(ArrowLeft)`
+const StyledLeftIcon = styled(ArrowLeft)`
   position: absolute;
   top: 50%;
   left: 48px;

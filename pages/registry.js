@@ -2,16 +2,16 @@ import styled from "styled-components";
 
 export default function Registry() {
   return (
-    <Content>
-      <Title>Coming Soon...</Title>
-    </Content>
+    <StyledContent>
+      <StyledTitle>Coming Soon...</StyledTitle>
+    </StyledContent>
   );
 }
 
-const Content = styled.div`
+const StyledContent = styled.div`
   width: 100%;
   height: calc(100vh + 16px);
-  background-image: url("images/IMG_4300.JPG");
+  background-image: url("images/676A7611.jpg");
   background-position: center;
   background-size: cover;
   display: flex;
@@ -20,7 +20,7 @@ const Content = styled.div`
   text-align: center;
 `;
 
-const Title = styled.h1`
+const StyledTitle = styled.h1`
   font-size: 150px;
   letter-spacing: 40px;
   color: #fff1e6;

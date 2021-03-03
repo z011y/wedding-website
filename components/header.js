@@ -11,13 +11,13 @@ export default function Header() {
   };
 
   return (
-    <HeaderWrapper>
+    <StyledHeader>
       <Link href="/">
-        <Logo>
+        <StyledLogo>
           <h3>cameron and nicole</h3>
-        </Logo>
+        </StyledLogo>
       </Link>
-      <LinksWrapper>
+      <StyledLinksWrapper>
         <Link href="/ourStory">
           <a style={router.pathname === "/ourStory" ? activeLinkStyle : null}>
             our story
@@ -38,13 +38,13 @@ export default function Header() {
             rsvp
           </a>
         </Link>
-      </LinksWrapper>
+      </StyledLinksWrapper>
       <MobileMenu />
-    </HeaderWrapper>
+    </StyledHeader>
   );
 }
 
-const HeaderWrapper = styled.header`
+const StyledHeader = styled.header`
   position: absolute;
   top: 0;
   right: 0;
@@ -62,7 +62,7 @@ const HeaderWrapper = styled.header`
   }
 `;
 
-const Logo = styled.div`
+const StyledLogo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +85,7 @@ const Logo = styled.div`
   }
 `;
 
-const LinksWrapper = styled.div`
+const StyledLinksWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 500px;

@@ -4,19 +4,19 @@ import Form from "../components/form";
 
 export default function RSVP() {
   return (
-    <Content>
-      <FormWrapper>
-        <MobileTitle>RSVP</MobileTitle>
+    <StyledContent>
+      <StyledFormWrapper>
+        <StyledMobileTitle>RSVP</StyledMobileTitle>
         <Form />
-      </FormWrapper>
-      <Hero>
-        <Title>RSVP</Title>
-      </Hero>
-    </Content>
+      </StyledFormWrapper>
+      <StyledHero>
+        <StyledTitle>RSVP</StyledTitle>
+      </StyledHero>
+    </StyledContent>
   );
 }
 
-const Content = styled.div`
+const StyledContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   height: calc(100vh + 16px);
@@ -30,8 +30,8 @@ const Content = styled.div`
   }
 `;
 
-const Hero = styled.div`
-  background-image: url("images/IMG_4300.JPG");
+const StyledHero = styled.div`
+  background-image: url("images/676A7709.jpg");
   background-position: 100% 50%;
   background-size: cover;
   display: flex;
@@ -51,7 +51,7 @@ const Hero = styled.div`
   }
 `;
 
-const Title = styled.h1`
+const StyledTitle = styled.h1`
   position: absolute;
   font-size: 250px;
   letter-spacing: 40px;
@@ -70,7 +70,7 @@ const Title = styled.h1`
   }
 `;
 
-const MobileTitle = styled.h1`
+const StyledMobileTitle = styled.h1`
   position: absolute;
   top: 96px;
   font-size: 125px;
@@ -81,7 +81,7 @@ const MobileTitle = styled.h1`
   }
 `;
 
-const FormWrapper = styled.div`
+const StyledFormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #ddbea9;
