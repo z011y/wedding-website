@@ -9,7 +9,7 @@ export default function Registry() {
 
   const copyToClipboard = () => {
     setCopied(true);
-    navigator.clipboard.writeText("@cameroncharles");
+    navigator.clipboard.writeText("@cameroncharles_");
   };
 
   return (
