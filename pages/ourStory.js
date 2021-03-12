@@ -43,7 +43,7 @@ const StyledTitle = styled.h1`
 
 const StyledStoryWrapper = styled.div`
   width: 50%;
-  margin-top: 48px;
+  margin-top: 96px;
   margin-bottom: 48px;
 
   @media (max-width: 604px) {

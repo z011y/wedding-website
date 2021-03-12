@@ -49,7 +49,7 @@ const StyledHeader = styled.header`
   top: 0;
   right: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   padding: 48px;

@@ -160,7 +160,7 @@ const StyledFullImg = styled.div`
   background-position: center;
   background-size: contain;
   position: fixed;
-  z-index: 1000;
+  z-index: 2;
   top: 0;
   left: 0;
   display: flex;

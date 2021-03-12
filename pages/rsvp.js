@@ -79,6 +79,10 @@ const StyledMobileTitle = styled.h1`
   @media (min-width: 804px) {
     display: none;
   }
+
+  @media (max-width: 415px) {
+    font-size: 96px;
+  }
 `;
 
 const StyledFormWrapper = styled.div`

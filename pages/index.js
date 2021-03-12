@@ -30,6 +30,7 @@ export default function Home() {
           </StyledGridInfo>
         </StyledInfoWrapper>
         <StyledMobileWrapper>
+          <StyledDate>join us may 17th, 2021</StyledDate>
           <StyledGridInfo>
             <h1>time</h1>
             <h3>
@@ -63,8 +64,9 @@ const StyledHero = styled.div`
 const StyledInfo = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
-  height: 100vh;
+  height: calc(100vh + 48px);
   width: 100%;
+  padding-bottom: 48px;
 
   @media (max-width: 1098px) {
     grid-template-columns: 1fr 1fr;
@@ -80,7 +82,7 @@ const StyledTitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   transform: translateY(-48px);
-  z-index: 101;
+  z-index: 1;
   background-color: #fff1e6;
   border-top-right-radius: 50px;
   height: calc(100% + 48px);
@@ -94,6 +96,11 @@ const StyledDate = styled.h3`
   position: absolute;
   top: 32px;
   left: 48px;
+
+  @media (max-width: 804px) {
+    position: relative;
+    transform: translateY(-24px);
+  }
 `;
 
 const StyledGrid = styled.div`
@@ -117,6 +124,20 @@ const StyledGridInfo = styled(StyledGrid)`
   justify-content: start;
   text-align: left;
   padding: 0 0 0 48px;
+
+  @media (max-width: 804px) {
+    margin-bottom: 48px;
+  }
+
+  @media (max-width: 415px) {
+    h1 {
+      font-size: 36px;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+  }
 `;
 
 const StyledInfoWrapper = styled.div`
@@ -132,7 +153,7 @@ const StyledInfoWrapper = styled.div`
 const StyledMobileWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #fff1e6;
+  background-color: #eddcd2;
   margin-bottom: 48px;
 
   @media (min-width: 804px) {

@@ -30,9 +30,14 @@ const StyledHero = styled.div`
   h1 {
     font-size: 120px;
     margin-bottom: 96px;
+    letter-spacing: 20px;
 
     @media (max-width: 804px) {
       font-size: 80px;
+    }
+
+    @media (max-width: 415px) {
+      font-size: 50px;
     }
   }
 `;
