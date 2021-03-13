@@ -98,8 +98,8 @@ const StyledDate = styled.h3`
   left: 48px;
 
   @media (max-width: 804px) {
-    position: relative;
-    transform: translateY(-24px);
+    left: 12px;
+    top: auto;
   }
 `;
 

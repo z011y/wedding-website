@@ -133,6 +133,7 @@ const StyledLink = styled.a`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  z-index: 2;
 
   svg {
     margin-right: 12px;
