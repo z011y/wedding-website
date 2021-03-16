@@ -1,10 +1,19 @@
 import styled from "styled-components";
+import Image from "next/image";
+
 import Story from "../docs/ourStory.mdx";
 
 export default function OurStory() {
   return (
     <>
-      <StyledHero src="/images/676A6915.jpg"></StyledHero>
+      <StyledHero>
+        <Image
+          layout="fill"
+          objectFit="contain"
+          objectPosition="left"
+          src="/images/676A6915.jpg"
+        ></Image>
+      </StyledHero>
       <StyledTitle>our story</StyledTitle>
       <StyledContent>
         <StyledStoryWrapper>
@@ -15,9 +24,9 @@ export default function OurStory() {
   );
 }
 
-const StyledHero = styled.img`
-  width: 50%;
+const StyledHero = styled.div`
   border-bottom-right-radius: 50px;
+  height: 100vh;
 
   @media (max-width: 964px) {
     height: calc(100vh + 16px);
@@ -36,7 +45,7 @@ const StyledTitle = styled.h1`
   transform: rotate(90deg);
   letter-spacing: 15px;
 
-  @media (max-width: 964px) {
+  @media (max-width: 614px) {
     color: #fff1e6;
   }
 `;

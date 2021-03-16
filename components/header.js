@@ -53,6 +53,7 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 48px;
+  padding-bottom: 0px;
 
   @media (max-width: 804px) {
     height: 48px;
@@ -89,6 +90,7 @@ const StyledLinksWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 500px;
+  height: 25px;
 
   @media (max-width: 804px) {
     display: none;

@@ -1,15 +1,51 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { request } from "graphql-request";
+import useSWR from "swr";
 
 import Masonry from "../components/masonry";
 
-export default function Gallery() {
+const fetcher = (query) =>
+  request(
+    "https://api-us-west-2.graphcms.com/v2/ckkyjl7i66vht01yw763t4j63/master",
+    query
+  );
+
+export async function getStaticProps() {
+  const data = await fetcher(`
+  {
+    assets {
+      id
+      url(transformation: { image: { resize: { width: 1400 } } })
+    }
+  }
+`);
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+export default function Gallery(props) {
+  const { data, error } = useSWR(
+    `
+      {
+        assets {
+          id
+          url(transformation: { image: { resize: { width: 1400 } } })
+        }
+      }
+    `,
+    fetcher,
+    { initialData: props.data }
+  );
   return (
     <StyledContent>
       <StyledHero>
         <h1>Gallery</h1>
       </StyledHero>
-      <Masonry />
+      <Masonry data={data} error={error} />
     </StyledContent>
   );
 }

@@ -6,49 +6,14 @@ import { X, ArrowRight, ArrowLeft } from "react-feather";
 
 import Image from "./image";
 
-const fetcher = (query) =>
-  request(
-    "https://api-us-west-2.graphcms.com/v2/ckkyjl7i66vht01yw763t4j63/master",
-    query
-  );
-
-export async function getStaticProps() {
-  const data = await fetcher(`
-    {
-      assets(first: 10) {
-        id
-        url(transformation: { image: { resize: { width: 1400 } } })
-      }
-    }
-  `);
-  return {
-    props: {
-      data,
-      error,
-    },
-  };
-}
-
 export default function Masonry(props) {
   const [active, setActive] = useState(undefined);
-  const { data, error } = useSWR(
-    `
-      {
-        assets {
-          id
-          url(transformation: { image: { resize: { width: 1400 } } })
-        }
-      }
-    `,
-    fetcher,
-    { initialData: props.data }
-  );
 
   const renderImages = () => {
     let index = -1;
-    if (error) return <div>failed to load</div>;
-    if (!data) return <div>loading...</div>;
-    return data.assets.map((img) => {
+    if (props.error) return <div>failed to load</div>;
+    if (!props.data) return <div>loading...</div>;
+    return props.data.assets.map((img) => {
       index++;
       return (
         <Image
@@ -70,7 +35,7 @@ export default function Masonry(props) {
   };
 
   const right = () => {
-    if (active !== undefined && active < data.assets.length - 1) {
+    if (active !== undefined && active < props.data.assets.length - 1) {
       setActive(active + 1);
     }
   };
@@ -116,10 +81,10 @@ export default function Masonry(props) {
     <>
       {active >= 0 ? (
         <StyledFullImg
-          style={{ backgroundImage: `url(${data.assets[active].url})` }}
+          style={{ backgroundImage: `url(${props.data.assets[active].url})` }}
         >
           <StyledCloseIcon onClick={close} />
-          {active < data.assets.length - 1 ? (
+          {active < props.data.assets.length - 1 ? (
             <StyledRightIcon onClick={right} />
           ) : null}
           {active > 0 ? <StyledLeftIcon onClick={left} /> : null}
