@@ -18,11 +18,17 @@ export default function Registry() {
       <StyledLinks>
         <StyledTitle>registry</StyledTitle>
         <p>We are registered at the following stores:</p>
-        <StyledLink href="https://target.com" target="blank">
+        <StyledLink
+          href="http://tgt.gifts/nicoleandcameron-2020"
+          target="blank"
+        >
           <ExternalLink />
           target
         </StyledLink>
-        <StyledLink href="https://amazon.com" target="blank">
+        <StyledLink
+          href="https://www.amazon.com/wedding/share/cameronandnicole"
+          target="blank"
+        >
           <ExternalLink />
           amazon
         </StyledLink>
